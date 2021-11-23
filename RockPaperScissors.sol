@@ -52,7 +52,7 @@ contract RockPaperScissors {
    function getPlayer2(bool _rock, bool _paper, bool _scissors, uint _bet) public {
         player2 = payable(msg.sender);
         require(_bet > 0, "Bet must be > 0.");
-        require(_bet <= poolBalance[player1], "Not enough funds for this bet.");
+        require(_bet <= poolBalance[player2], "Not enough funds for this bet.");
         require((_rock == true && _paper == false && _scissors == false) || 
                 (_rock == false && _paper == true && _scissors == false) || 
                 (_rock == false && _paper == false && _scissors == true), "Choose only one.");
